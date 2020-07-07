@@ -1,6 +1,6 @@
-// function greet(name) {
-//     // write your code here
-//      return("Hello, " + name );
+function greet(name) {
+    // write your code here
+     return("Hello, " + name );
   
-//     // write your code above this line
-//   }
+    // write your code above this line
+  }
