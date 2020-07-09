@@ -19,15 +19,25 @@ nameBtn.addEventListener("click", function () {
 	if (checkedRadioBtn) {
 		var lang = checkedRadioBtn.value
 		var igama = Name.value
-		var newName = igama[0].toUpperCase() + igama.slice(1).toLowerCase();
-		greetingInstance.setGreetNames(newName)
-		 chumaNumber.innerHTML = greetingInstance.greetNameCounter();
-		localStorage.setItem('igama', JSON.stringify(greetingInstance.getGreetNames()))
-	
+		// var newName = igama[0].toUpperCase() + igama.slice(1).toLowerCase();
+		greetingInstance.setGreetNames(igama)
 	}
+		const errMsg = greetingInstance.errorHandler(lang, igama);
+	 	
+
 	
-	message.innerHTML = greetingInstance.languages(lang, newName);
-	errMsg.innerHTML = greetingInstance.errorHandler(lang, igama);
+	if(!errMsg){
+		
+		
+		chumaNumber.innerHTML = greetingInstance.greetNameCounter();
+		message.innerHTML = greetingInstance.languages(lang, igama);
+
+		localStorage.setItem('igama', JSON.stringify(greetingInstance.getGreetNames()))
+	}
+	else{
+		message.innerHTML = errMsg;
+	}
+	setTimeout(function(){ message.innerHTML = "" }, 3000)
 });
 
 
