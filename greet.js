@@ -47,13 +47,14 @@ function Greetings(greeted) {
 		var regNames = /^[a-zA-Z]+$/;
 		newRegex = new  RegExp(regNames);
 		regexTest = newRegex.test(igama);
-		console.log(regexTest) 
+		// var enteredName = igama.replace(regNames, "")
+
 		if(regexTest){
-			var newName = igama.charAt(0).toUppercase() +igama.slice(1).toLowerCase()
-			alert(newName)
+			var newName = igama.charAt(0).toUpperCase() + igama.slice(1).toLowerCase()
+	
 			return newName;
 		}
-		return " ";
+		return "";
 	}
 	return {
 		setGreetNames,

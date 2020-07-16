@@ -55,7 +55,7 @@ describe("Greeting exercise tests", function () {
         });
       });
         describe("Should keep count of users", function () {
-          it("count names stoerd in local storage", function () {
+          it("count names stored in local storage", function () {
             let greetings = Greetings()
             greetings.greetNameCounter()
             assert.equal(0,   greetings.greetNameCounter())

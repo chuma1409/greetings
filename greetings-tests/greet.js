@@ -31,7 +31,7 @@ function Greetings(greeted) {
 			
 			return "please enter your name";
 		}
-		if(!igama && !lang){
+		if(!lang && !igama){
 			
 			return "please enter your name and select a language";
 		}
@@ -43,11 +43,25 @@ function Greetings(greeted) {
 	function getGreetNames() {
 		return namesGreeted;
 	}
+	function regFunction(igama){
+		var regNames = /^[a-zA-Z]+$/;
+		newRegex = new RegExp(regNames);
+		regexTest = newRegex.test(igama);
+		// var enteredName = igama.replace(regNames, "")
+		console.log(regexTest)
+		if(regexTest){
+			var newName = igama.charAt(0).toUpperCase() + igama.slice(1).toLowerCase()
+	
+			return newName;
+		}
+		return "";
+	}
 	return {
 		setGreetNames,
 		languages,
 		greetNameCounter,
 		getGreetNames,
-		errorHandler
+		errorHandler,
+		regFunction
 	}
 }
