@@ -26,15 +26,15 @@ body {
   }
   
   .msg {
-	margin-bottom: 0.95em;
+	margin-bottom: 2em;
 	
   }
   
   .message {
-	padding: 0.9em;
+	padding: 2em;
 	
 	height: 2em;
-	width: 10em;
+	width: 40em;
 	
 	color: black;
 	margin-bottom: 1em;

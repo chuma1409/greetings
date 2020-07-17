@@ -1,7 +1,7 @@
 function Greetings(greeted) {
 
 	const namesGreeted = greeted || {};
-	var errMsg = " "
+
 
 	function setGreetNames(igama) {
 		if (igama) {
@@ -23,6 +23,10 @@ function Greetings(greeted) {
 		}
 	}
 	function errorHandler(lang, igama){
+		if(!lang && !igama){
+			
+			return "please enter your name and select a language";
+		}
 		if(!lang){
 			
 			return "please select a language";
@@ -31,10 +35,7 @@ function Greetings(greeted) {
 			
 			return "please enter your name";
 		}
-		if(!lang && !igama){
-			
-			return "please enter your name and select a language";
-		}
+		
 	}
 	function greetNameCounter() {
 		var listOfNames = Object.keys(namesGreeted)
